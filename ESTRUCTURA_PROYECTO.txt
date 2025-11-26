@@ -1,0 +1,158 @@
+========================================
+HOSPITAL EPS - ESTRUCTURA DEL PROYECTO
+========================================
+
+hospitalEPS/
+│
+├── 📄 index.php                    # Página de login
+├── 📄 dashboard.php                # Dashboard principal
+├── 📄 .htaccess                    # Configuración de seguridad
+├── 📄 README.md                    # Documentación completa
+├── 📄 INSTALACION.md               # Guía de instalación
+├── 📄 INSTRUCCIONES_RAPIDAS.txt    # Guía rápida
+├── 📄 COPIAR_A_WAMP.bat           # Script de copia automática
+│
+├── 📁 api/                         # APIs REST
+│   ├── 📄 login.php               # API de autenticación
+│   ├── 📄 logout.php              # API de cierre de sesión
+│   │
+│   ├── 📁 pacientes/
+│   │   ├── 📄 crear.php           # Crear paciente
+│   │   ├── 📄 actualizar.php      # Actualizar paciente
+│   │   └── 📄 eliminar.php        # Eliminar paciente
+│   │
+│   ├── 📁 doctores/
+│   │   ├── 📄 actualizar.php      # Actualizar doctor
+│   │   └── 📄 eliminar.php        # Eliminar doctor
+│   │
+│   └── 📁 historias/
+│       ├── 📄 crear.php           # Crear historia clínica
+│       ├── 📄 ver.php             # Ver historia clínica
+│       └── 📄 eliminar.php        # Eliminar historia clínica
+│
+├── 📁 assets/                      # Recursos estáticos
+│   ├── 📁 css/
+│   │   ├── 📄 login.css           # Estilos del login
+│   │   └── 📄 dashboard.css       # Estilos del dashboard
+│   │
+│   ├── 📁 js/
+│   │   ├── 📄 login.js            # JavaScript del login
+│   │   ├── 📄 dashboard.js        # JavaScript del dashboard
+│   │   └── 📄 datatable-config.js # Configuración de tablas
+│   │
+│   └── 📁 images/
+│       └── 📄 hospital.jpg        # Imagen del hospital
+│
+├── 📁 config/                      # Configuración
+│   ├── 📄 database.php            # Conexión a base de datos
+│   └── 📄 security.php            # Funciones de seguridad
+│
+├── 📁 database/                    # Base de datos
+│   ├── 📄 eps_database.sql        # Script SQL completo
+│   └── 📄 generar_password.php    # Generador de contraseñas
+│
+├── 📁 includes/                    # Componentes reutilizables
+│   ├── 📄 sidebar.php             # Menú lateral
+│   ├── 📄 navbar.php              # Barra de navegación
+│   └── 📄 footer.php              # Pie de página
+│
+└── 📁 pages/                       # Páginas por rol
+    │
+    ├── 📁 admin/                   # Módulo Administrador
+    │   ├── 📄 dashboard_content.php
+    │   ├── 📄 pacientes.php       # Gestión de pacientes
+    │   ├── 📄 doctores.php        # Gestión de doctores
+    │   ├── 📄 usuarios.php        # Gestión de administradores
+    │   ├── 📄 historias.php       # Todas las historias clínicas
+    │   └── 📄 logs.php            # Logs del sistema
+    │
+    ├── 📁 doctor/                  # Módulo Doctor
+    │   ├── 📄 dashboard_content.php
+    │   ├── 📄 perfil.php          # Perfil del doctor
+    │   ├── 📄 pacientes.php       # Pacientes del doctor
+    │   └── 📄 historias.php       # Historias del doctor
+    │
+    └── 📁 paciente/                # Módulo Paciente
+        ├── 📄 dashboard_content.php
+        ├── 📄 perfil.php          # Perfil del paciente
+        ├── 📄 historias.php       # Historias del paciente
+        └── 📄 visitas.php         # Visitas del paciente
+
+========================================
+TECNOLOGÍAS UTILIZADAS
+========================================
+
+Backend:
+- PHP 7.4+
+- MySQL 5.7+
+- PDO para base de datos
+- Sesiones PHP
+
+Frontend:
+- HTML5
+- CSS3
+- Bootstrap 5.3
+- JavaScript ES6
+- jQuery 3.7
+- DataTables 1.13
+- Bootstrap Icons
+
+Seguridad:
+- Password hashing (bcrypt)
+- Prepared statements (PDO)
+- Input sanitization
+- SQL injection detection
+- Session management
+- Access control
+
+========================================
+CARACTERÍSTICAS PRINCIPALES
+========================================
+
+✓ Sistema de login seguro
+✓ Detección de inyección SQL
+✓ 3 roles con permisos diferenciados
+✓ Dashboard personalizado por rol
+✓ Gestión completa de usuarios
+✓ Historias clínicas relacionales
+✓ Sistema de logs completo
+✓ Tablas con paginación dinámica
+✓ Filtros y búsqueda en tiempo real
+✓ Diseño responsive (móvil/tablet/desktop)
+✓ Colores temáticos de hospital
+✓ Interfaz intuitiva y moderna
+
+========================================
+BASE DE DATOS
+========================================
+
+Tablas:
+1. administradores (13 campos)
+2. doctores (15 campos)
+3. pacientes (18 campos)
+4. historias_clinicas (14 campos)
+5. visitas_medicas (7 campos)
+6. logs (8 campos)
+
+Relaciones:
+- historias_clinicas -> pacientes (paciente_id)
+- historias_clinicas -> doctores (doctor_id)
+- historias_clinicas -> administradores (admin_id)
+- visitas_medicas -> pacientes (paciente_id)
+- visitas_medicas -> doctores (doctor_id)
+- visitas_medicas -> historias_clinicas (historia_clinica_id)
+
+========================================
+ARCHIVOS TOTALES: 44
+========================================
+
+PHP: 28 archivos
+CSS: 2 archivos
+JavaScript: 3 archivos
+SQL: 1 archivo
+Documentación: 5 archivos
+Configuración: 2 archivos
+Imágenes: 1 archivo
+Scripts: 2 archivos
+
+========================================

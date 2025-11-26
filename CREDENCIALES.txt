@@ -1,0 +1,211 @@
+========================================
+HOSPITAL EPS - CREDENCIALES Y ACCESOS
+========================================
+
+URL DEL SISTEMA
+---------------
+http://localhost/hospitalEPS
+
+CREDENCIALES ADMINISTRADOR
+--------------------------
+Usuario: jarodriguez11
+Contraseña: Blink182
+
+CONFIGURACIÓN BASE DE DATOS
+---------------------------
+Host: localhost
+Puerto: 3306
+Base de datos: EPS
+Usuario: root
+Contraseña: (vacía)
+
+PHPMYADMIN
+----------
+URL: http://localhost/phpmyadmin
+Usuario: root
+Contraseña: (vacía)
+
+========================================
+DATOS DEL PROYECTO
+========================================
+
+Autor: Jonathan Alexis Rodriguez
+Especialización: Seguridad de la Información
+Proyecto: Proyecto de Grado
+Email: jarodriguez11@libertadores.edu.co
+Año: 2025
+
+========================================
+CARACTERÍSTICAS DE SEGURIDAD
+========================================
+
+✓ Contraseñas hasheadas con bcrypt
+✓ Detección de inyección SQL
+✓ Sanitización de inputs
+✓ Prepared statements (PDO)
+✓ Control de acceso por roles
+✓ Logs de todas las acciones
+✓ Sesiones seguras
+✓ Protección de archivos sensibles
+
+========================================
+ROLES Y PERMISOS
+========================================
+
+ADMINISTRADOR (jarodriguez11)
+- Acceso completo al sistema
+- Gestionar pacientes, doctores y administradores
+- Crear/modificar/eliminar historias clínicas
+- Ver logs del sistema
+- Eliminar cualquier registro
+
+DOCTOR
+- Ver y editar su perfil
+- Registrar nuevos pacientes
+- Crear historias clínicas
+- Modificar/eliminar sus propias historias
+- Ver solo sus pacientes
+
+PACIENTE
+- Ver su perfil
+- Ver sus historias clínicas
+- Ver sus visitas médicas
+- Modificar: contraseña, dirección, correo, teléfono
+- No puede modificar otros datos personales
+
+========================================
+TABLAS DE LA BASE DE DATOS
+========================================
+
+1. administradores
+   - Almacena usuarios administradores
+   - Campos: id, nombres, apellidos, identificacion, usuario, 
+     password, rol, cargo, edad, genero, direccion, telefono
+
+2. doctores
+   - Almacena información de doctores
+   - Campos: id, nombres, apellidos, identificacion, usuario, 
+     password, telefono, rol, direccion, profesion, edad, 
+     genero, titulo_profesional, cargo
+
+3. pacientes
+   - Almacena información de pacientes
+   - Campos: id, nombre, primer_apellido, segundo_apellido, 
+     identificacion, usuario, password, edad, telefono, 
+     direccion, profesion, raza, tipo_piel, sexo, 
+     grupo_sanguineo, estatura, peso, correo_electronico, rol
+
+4. historias_clinicas
+   - Almacena historias médicas
+   - Campos: id, paciente_id, doctor_id, admin_id, 
+     fecha_consulta, motivo_consulta, diagnostico, 
+     tratamiento, medicamentos, observaciones, sintomas, 
+     examenes_realizados
+
+5. visitas_medicas
+   - Almacena registro de visitas
+   - Campos: id, paciente_id, doctor_id, historia_clinica_id, 
+     fecha_visita, motivo, observaciones
+
+6. logs
+   - Almacena logs de actividad
+   - Campos: id, usuario, accion, descripcion, tabla_afectada, 
+     registro_id, ip_address, fecha
+
+========================================
+FUNCIONES DE SEGURIDAD
+========================================
+
+detectSQLInjection($input)
+- Detecta patrones de inyección SQL
+- Registra intentos sospechosos en logs
+- Bloquea el acceso
+
+sanitizeInput($data)
+- Limpia y sanitiza entradas de usuario
+- Previene XSS
+- Elimina caracteres peligrosos
+
+logSuspiciousActivity($usuario, $ip, $descripcion)
+- Registra actividades sospechosas
+- Almacena IP del atacante
+- Guarda timestamp del intento
+
+========================================
+MENSAJES DE SEGURIDAD
+========================================
+
+Intento de Inyección SQL:
+"Usted está intentando realizar una operación sospechosa 
+prohibida. Intento de acceso bloqueado."
+
+Este mensaje se muestra cuando:
+- Se detectan patrones SQL en inputs
+- Se intentan caracteres especiales maliciosos
+- Se detectan intentos de bypass de autenticación
+
+========================================
+PAGINACIÓN DE TABLAS
+========================================
+
+Opciones disponibles:
+- 10 registros por página
+- 20 registros por página
+- 50 registros por página
+- 100 registros por página
+
+Características:
+✓ Búsqueda en tiempo real
+✓ Ordenamiento por columnas
+✓ Filtros personalizados
+✓ Exportación de datos
+✓ Responsive en móviles
+
+========================================
+COLORES DEL SISTEMA
+========================================
+
+Primario: #0d6efd (Azul hospital)
+Secundario: #6c757d (Gris)
+Éxito: #198754 (Verde)
+Peligro: #dc3545 (Rojo)
+Advertencia: #ffc107 (Amarillo)
+Info: #0dcaf0 (Cyan)
+
+Gradientes:
+- Login: rgba(13, 110, 253, 0.8) a rgba(25, 135, 84, 0.8)
+- Botones: #0d6efd a #0a58ca
+- Sidebar: #0d6efd a #0a58ca
+
+========================================
+SOPORTE Y CONTACTO
+========================================
+
+Para problemas técnicos:
+Email: jarodriguez11@libertadores.edu.co
+
+Para consultas del proyecto:
+Universidad: Fundación Universitaria Los Libertadores
+Programa: Especialización en Seguridad de la Información
+
+========================================
+NOTAS IMPORTANTES
+========================================
+
+⚠️ IMPORTANTE: Este sistema es un proyecto académico
+⚠️ Cambie las credenciales antes de usar en producción
+⚠️ Configure HTTPS para uso en producción
+⚠️ Actualice las contraseñas regularmente
+⚠️ Haga backups regulares de la base de datos
+⚠️ Revise los logs periódicamente
+
+========================================
+VERSIÓN DEL SISTEMA
+========================================
+
+Versión: 1.0.0
+Fecha de creación: 2025
+Estado: Proyecto de Grado
+Licencia: Todos los derechos reservados
+
+========================================

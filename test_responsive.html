@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Responsive - Hospital EPS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .device-info {
+            background: #0d6efd;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .status-ok {
+            color: #198754;
+            font-weight: bold;
+        }
+        .status-warning {
+            color: #ffc107;
+            font-weight: bold;
+        }
+        .test-button {
+            margin: 5px;
+            min-height: 44px;
+            min-width: 44px;
+        }
+        .test-input {
+            font-size: 16px;
+            padding: 12px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <h1 class="text-center mb-4">
+            <i class="bi bi-phone"></i> Test Responsive - Hospital EPS
+        </h1>
+        
+        <div class="device-info">
+            <h4><i class="bi bi-info-circle"></i> Información del Dispositivo</h4>
+            <p class="mb-1"><strong>Ancho de pantalla:</strong> <span id="screenWidth"></span>px</p>
+            <p class="mb-1"><strong>Alto de pantalla:</strong> <span id="screenHeight"></span>px</p>
+            <p class="mb-1"><strong>Orientación:</strong> <span id="orientation"></span></p>
+            <p class="mb-1"><strong>Tipo de dispositivo:</strong> <span id="deviceType"></span></p>
+            <p class="mb-0"><strong>Touch disponible:</strong> <span id="touchSupport"></span></p>
+        </div>
+
+        <div class="test-section">
+            <h3><i class="bi bi-check-circle"></i> Test 1: Botones Táctiles</h3>
+            <p>Los botones deben tener al menos 44x44px para ser fáciles de presionar</p>
+            <button class="btn btn-primary test-button">
+                <i class="bi bi-hand-index-thumb"></i> Botón 1
+            </button>
+            <button class="btn btn-success test-button">
+                <i class="bi bi-hand-index-thumb"></i> Botón 2
+            </button>
+            <button class="btn btn-danger test-button">
+                <i class="bi bi-hand-index-thumb"></i> Botón 3
+            </button>
+            <p class="mt-3 status-ok">
+                <i class="bi bi-check-lg"></i> Si puedes presionar estos botones fácilmente, el test es exitoso
+            </p>
+        </div>
+
+        <div class="test-section">
+            <h3><i class="bi bi-keyboard"></i> Test 2: Inputs sin Zoom</h3>
+            <p>Los inputs deben tener font-size de 16px para evitar zoom en iOS</p>
+            <input type="text" class="form-control test-input" placeholder="Escribe aquí...">
+            <input type="email" class="form-control test-input" placeholder="Email...">
+            <input type="password" class="form-control test-input" placeholder="Contraseña...">
+            <p class="mt-3 status-ok">
+                <i class="bi bi-check-lg"></i> Si no hay zoom automático al escribir, el test es exitoso
+            </p>
+        </div>
+
+        <div class="test-section">
+            <h3><i class="bi bi-arrows-fullscreen"></i> Test 3: Diseño Responsive</h3>
+            <div class="row">
+                <div class="col-6 col-md-3 mb-3">
+                    <div class="card text-white bg-primary">
+                        <div class="card-body">
+                            <h5>Card 1</h5>
+                            <p class="mb-0">Responsive</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <div class="card text-white bg-success">
+                        <div class="card-body">
+                            <h5>Card 2</h5>
+                            <p class="mb-0">Responsive</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <div class="card text-white bg-warning">
+                        <div class="card-body">
+                            <h5>Card 3</h5>
+                            <p class="mb-0">Responsive</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <div class="card text-white bg-danger">
+                        <div class="card-body">
+                            <h5>Card 4</h5>
+                            <p class="mb-0">Responsive</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="status-ok">
+                <i class="bi bi-check-lg"></i> Las tarjetas deben verse en 2 columnas en móviles y 4 en desktop
+            </p>
+        </div>
+
+        <div class="test-section">
+            <h3><i class="bi bi-table"></i> Test 4: Tabla con Scroll</h3>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Columna 1</th>
+                            <th>Columna 2</th>
+                            <th>Columna 3</th>
+                            <th>Columna 4</th>
+                            <th>Columna 5</th>
+                            <th>Columna 6</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dato 1</td>
+                            <td>Dato 2</td>
+                            <td>Dato 3</td>
+                            <td>Dato 4</td>
+                            <td>Dato 5</td>
+                            <td>Dato 6</td>
+                        </tr>
+                        <tr>
+                            <td>Dato 1</td>
+                            <td>Dato 2</td>
+                            <td>Dato 3</td>
+                            <td>Dato 4</td>
+                            <td>Dato 5</td>
+                            <td>Dato 6</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="status-ok">
+                <i class="bi bi-check-lg"></i> La tabla debe tener scroll horizontal en móviles
+            </p>
+        </div>
+
+        <div class="test-section">
+            <h3><i class="bi bi-link-45deg"></i> Enlaces Rápidos</h3>
+            <div class="d-grid gap-2">
+                <a href="index.php" class="btn btn-primary btn-lg">
+                    <i class="bi bi-box-arrow-in-right"></i> Ir al Login
+                </a>
+                <a href="dashboard.php" class="btn btn-success btn-lg">
+                    <i class="bi bi-speedometer2"></i> Ir al Dashboard
+                </a>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3><i class="bi bi-clipboard-check"></i> Checklist de Pruebas</h3>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="check1">
+                <label class="form-check-label" for="check1">
+                    Login se ve completo sin necesidad de scroll
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="check2">
+                <label class="form-check-label" for="check2">
+                    Sidebar se abre y cierra correctamente en móviles
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="check3">
+                <label class="form-check-label" for="check3">
+                    Botones son fáciles de presionar
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="check4">
+                <label class="form-check-label" for="check4">
+                    Textos son legibles sin zoom
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="check5">
+                <label class="form-check-label" for="check5">
+                    Tablas tienen scroll horizontal visible
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="check6">
+                <label class="form-check-label" for="check6">
+                    Footer no tapa contenido importante
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Actualizar información del dispositivo
+        function updateDeviceInfo() {
+            document.getElementById('screenWidth').textContent = window.innerWidth;
+            document.getElementById('screenHeight').textContent = window.innerHeight;
+            document.getElementById('orientation').textContent = 
+                window.innerWidth > window.innerHeight ? 'Landscape (Horizontal)' : 'Portrait (Vertical)';
+            
+            // Detectar tipo de dispositivo
+            let deviceType = 'Desktop';
+            if (window.innerWidth <= 576) deviceType = 'Móvil Pequeño';
+            else if (window.innerWidth <= 768) deviceType = 'Móvil';
+            else if (window.innerWidth <= 991) deviceType = 'Tablet';
+            else if (window.innerWidth <= 1200) deviceType = 'Desktop Pequeño';
+            document.getElementById('deviceType').textContent = deviceType;
+            
+            // Detectar soporte táctil
+            const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            document.getElementById('touchSupport').textContent = hasTouch ? 'Sí ✓' : 'No ✗';
+        }
+
+        // Actualizar al cargar y al cambiar tamaño
+        updateDeviceInfo();
+        window.addEventListener('resize', updateDeviceInfo);
+        window.addEventListener('orientationchange', updateDeviceInfo);
+    </script>
+</body>
+</html>

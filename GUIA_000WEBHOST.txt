@@ -1,0 +1,277 @@
+╔══════════════════════════════════════════════════════════════╗
+║        GUÍA PASO A PASO: 000WEBHOST (LA MÁS FÁCIL)          ║
+╚══════════════════════════════════════════════════════════════╝
+
+⏱️  TIEMPO TOTAL: 25-30 MINUTOS
+🌐 URL: https://www.000webhost.com/
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ PASO 1: REGISTRO (2 minutos)                               ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+1. Abre tu navegador
+2. Ve a: https://www.000webhost.com/
+3. Haz clic en "Free Sign Up" (botón verde)
+4. Completa el formulario:
+   - Email: _______________________________
+   - Contraseña: _______________________________
+5. Haz clic en "Sign Up"
+6. Revisa tu email y verifica la cuenta
+7. Inicia sesión
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ PASO 2: CREAR SITIO WEB (3 minutos)                        ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+1. En el panel principal, haz clic en "Create New Website"
+2. Elige "Build Your Own Website"
+3. Ingresa un nombre para tu sitio:
+   Ejemplo: hospitaleps
+   
+   Tu URL será: hospitaleps.000webhostapp.com
+   
+   Mi URL: _______________________________.000webhostapp.com
+
+4. Haz clic en "Next"
+5. Elige una contraseña para el sitio (diferente a la del login)
+6. Haz clic en "Create"
+7. Espera 30 segundos a que se active
+8. ¡Listo! Tu sitio está creado
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ PASO 3: CREAR BASE DE DATOS (2 minutos)                    ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+1. En el panel de tu sitio, busca "Manage Database"
+2. Haz clic en "New Database"
+3. Completa:
+   - Database name: hospitaleps_db
+   - Database username: (se genera automático)
+   - Database password: (elige una segura)
+
+4. Haz clic en "Create Database"
+
+5. ⚠️ IMPORTANTE - ANOTA ESTOS DATOS:
+
+   ┌─────────────────────────────────────────────────┐
+   │ CREDENCIALES DE BASE DE DATOS                   │
+   ├─────────────────────────────────────────────────┤
+   │ Hostname: localhost                             │
+   │ Database: id_______hospitaleps_db               │
+   │ Username: id_______hospitaleps                  │
+   │ Password: _______________________________       │
+   └─────────────────────────────────────────────────┘
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ PASO 4: SUBIR ARCHIVOS (15 minutos)                        ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+OPCIÓN A - File Manager (Más fácil):
+
+1. En el panel, haz clic en "File Manager"
+2. Verás una carpeta "public_html"
+3. Entra a "public_html"
+4. ELIMINA el archivo "index.html" que viene por defecto
+5. Haz clic en "Upload Files"
+6. Selecciona TODOS los archivos de: 
+   C:\wamp64\www\hospitalEPS\hospitalEPS_hosting\
+7. Espera a que se suban todos (puede tardar 10-15 minutos)
+8. Verifica que se subieron todas las carpetas:
+   ✓ api/
+   ✓ assets/
+   ✓ config/
+   ✓ database/
+   ✓ includes/
+   ✓ pages/
+   ✓ logs/
+   ✓ imagenes/
+   ✓ index.php
+   ✓ dashboard.php
+   ✓ .htaccess
+
+OPCIÓN B - FTP (Más rápido):
+
+1. Descarga FileZilla: https://filezilla-project.org/
+2. En 000webhost, ve a "FTP Details"
+3. Anota:
+   - FTP Host: files.000webhost.com
+   - FTP Username: id_______
+   - FTP Password: (la del sitio)
+   - FTP Port: 21
+
+4. Abre FileZilla
+5. Conecta con los datos de arriba
+6. Panel izquierdo: navega a hospitalEPS_hosting
+7. Panel derecho: navega a public_html
+8. Selecciona TODO en panel izquierdo
+9. Arrastra al panel derecho
+10. Espera a que termine
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ PASO 5: CONFIGURAR DATABASE.PHP (2 minutos)                ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+1. En File Manager, navega a: config/database.php
+2. Haz clic derecho > Edit
+3. Busca las líneas 14-17 y edita:
+
+   ANTES:
+   private $host = "localhost";
+   private $db_name = "EPS";
+   private $username = "root";
+   private $password = "";
+
+   DESPUÉS (usa los datos del Paso 3):
+   private $host = "localhost";
+   private $db_name = "id_______hospitaleps_db";
+   private $username = "id_______hospitaleps";
+   private $password = "tu_password_aqui";
+
+4. Haz clic en "Save"
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ PASO 6: IMPORTAR BASE DE DATOS (3 minutos)                 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+MÉTODO 1 - phpMyAdmin (Recomendado):
+
+1. En el panel, ve a "Manage Database"
+2. Haz clic en "phpMyAdmin"
+3. En el panel izquierdo, selecciona tu base de datos
+   (id_______hospitaleps_db)
+4. Haz clic en la pestaña "Importar"
+5. Haz clic en "Seleccionar archivo"
+6. Busca: C:\wamp64\www\hospitalEPS\hospitalEPS_hosting\database\eps_database.sql
+7. Haz clic en "Continuar" (abajo de la página)
+8. Espera 10-30 segundos
+9. Deberías ver: "Importación finalizada con éxito"
+
+MÉTODO 2 - Si phpMyAdmin no funciona:
+
+1. En File Manager, edita: database/importar_manual.php
+2. Cambia las credenciales (líneas 14-17) con los datos del Paso 3
+3. Guarda el archivo
+4. En tu navegador, ve a:
+   http://tudominio.000webhostapp.com/database/importar_manual.php
+5. Sigue las instrucciones en pantalla
+6. Después de importar, ELIMINA el archivo importar_manual.php
+
+MÉTODO 3 - Copiar y Pegar:
+
+1. Abre: C:\wamp64\www\hospitalEPS\database\eps_database.sql
+2. Copia TODO el contenido (Ctrl+A, Ctrl+C)
+3. En phpMyAdmin, haz clic en la pestaña "SQL"
+4. Pega el contenido (Ctrl+V)
+5. Haz clic en "Continuar"
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ PASO 7: PROBAR EL SISTEMA (3 minutos)                      ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+1. Abre tu navegador
+2. Ve a: http://tudominio.000webhostapp.com
+3. Deberías ver la página de login
+4. Inicia sesión con:
+   
+   Usuario: jarodriguez11
+   Contraseña: Blink182
+
+5. Si todo está bien, verás el dashboard
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ VERIFICACIÓN COMPLETA                                      ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[ ] La página de login carga correctamente
+[ ] Se ve la imagen del hospital
+[ ] Los estilos CSS se aplican
+[ ] Puedo iniciar sesión
+[ ] El dashboard muestra estadísticas
+[ ] Puedo ver la lista de pacientes
+[ ] Puedo ver la lista de doctores
+[ ] Puedo crear un nuevo paciente
+[ ] Las tablas funcionan correctamente
+[ ] El menú lateral funciona
+[ ] Puedo cerrar sesión
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ SOLUCIÓN DE PROBLEMAS                                      ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+❌ Error: "No se puede conectar a la base de datos"
+   → Verifica config/database.php
+   → Asegúrate de usar las credenciales correctas del Paso 3
+   → El host debe ser "localhost"
+
+❌ Error: "Página no encontrada" o 404
+   → Verifica que los archivos estén en public_html
+   → No deben estar en una subcarpeta
+   → Debe haber un index.php en la raíz de public_html
+
+❌ Error: "Internal Server Error" o 500
+   → Verifica que .htaccess se subió correctamente
+   → Revisa los permisos de las carpetas
+   → Verifica que PHP esté habilitado
+
+❌ La página se ve sin estilos
+   → Verifica que la carpeta assets/ se subió
+   → Limpia la caché del navegador (Ctrl+F5)
+   → Abre la consola del navegador (F12) para ver errores
+
+❌ Las imágenes no cargan
+   → Verifica que assets/images/ se subió
+   → Verifica que hospital.jpg existe
+   → Verifica los permisos de la carpeta
+
+❌ No puedo importar el SQL
+   → Usa el método de copiar y pegar
+   → O usa importar_manual.php
+   → Verifica que el archivo SQL se subió correctamente
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ DATOS IMPORTANTES                                          ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+📧 Email 000webhost: _______________________________
+🔑 Contraseña 000webhost: _______________________________
+🌐 URL del sitio: _______________________________.000webhostapp.com
+🗄️  Database: id_______hospitaleps_db
+👤 DB Username: id_______hospitaleps
+🔐 DB Password: _______________________________
+
+🔐 Credenciales del sistema:
+   Usuario: jarodriguez11
+   Contraseña: Blink182
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ CONSEJOS FINALES                                           ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+✅ Cambia la contraseña del administrador después del primer login
+✅ Haz backups regulares de la base de datos
+✅ No compartas las credenciales de la base de datos
+✅ Elimina archivos de prueba (test_*.php, debug_*.php)
+✅ Monitorea el uso de recursos en el panel de 000webhost
+
+⚠️  LIMITACIONES DE 000WEBHOST:
+   • 300MB de espacio (suficiente para este proyecto)
+   • 1GB de base de datos (más que suficiente)
+   • 3GB de ancho de banda mensual
+   • Puede suspender por inactividad (14 días sin visitas)
+   • No apto para producción con muchos usuarios
+
+💡 Si necesitas más recursos, considera:
+   • Hostinger: $1.99/mes
+   • Upgrade de 000webhost: $3.99/mes
+
+╔══════════════════════════════════════════════════════════════╗
+║                    ¡FELICITACIONES!                          ║
+║         Tu proyecto está en línea y funcionando              ║
+╚══════════════════════════════════════════════════════════════╝
+
+URL de tu proyecto: http://_______________________________.000webhostapp.com
+
+Comparte esta URL con tu profesor o quien necesites.
+
+¡Éxito con tu proyecto! 🚀
+

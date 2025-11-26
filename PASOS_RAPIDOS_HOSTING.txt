@@ -1,0 +1,189 @@
+╔══════════════════════════════════════════════════════════════╗
+║     GUÍA RÁPIDA: SUBIR HOSPITAL EPS A HOSTING GRATUITO      ║
+╚══════════════════════════════════════════════════════════════╝
+
+┌──────────────────────────────────────────────────────────────┐
+│ PASO 1: PREPARAR ARCHIVOS (5 minutos)                       │
+└──────────────────────────────────────────────────────────────┘
+
+1. Ejecuta: preparar_hosting.bat
+2. Se creará la carpeta "hospitalEPS_hosting" con archivos limpios
+3. Verifica que se creó correctamente
+
+┌──────────────────────────────────────────────────────────────┐
+│ PASO 2: REGISTRARSE EN INFINITYFREE (10 minutos)            │
+└──────────────────────────────────────────────────────────────┘
+
+1. Ve a: https://www.infinityfree.net/
+2. Haz clic en "Sign Up"
+3. Completa el registro
+4. Verifica tu email
+5. Crea una cuenta de hosting
+6. Elige subdominio (ejemplo: hospitaleps.rf.gd)
+7. Espera 2-5 minutos a que se active
+
+┌──────────────────────────────────────────────────────────────┐
+│ PASO 3: CREAR BASE DE DATOS (5 minutos)                     │
+└──────────────────────────────────────────────────────────────┘
+
+1. En InfinityFree, ve a "MySQL Databases"
+2. Haz clic en "Create Database"
+3. Anota estos datos:
+   
+   Hostname: ___________________________
+   Database: ___________________________
+   Username: ___________________________
+   Password: ___________________________
+
+┌──────────────────────────────────────────────────────────────┐
+│ PASO 4: CONFIGURAR DATABASE.PHP (2 minutos)                 │
+└──────────────────────────────────────────────────────────────┘
+
+1. Abre: hospitalEPS_hosting\config\database.php
+2. Edita con los datos del Paso 3:
+
+   private $host = "TU_HOSTNAME";
+   private $db_name = "TU_DATABASE";
+   private $username = "TU_USERNAME";
+   private $password = "TU_PASSWORD";
+
+3. Guarda el archivo
+
+┌──────────────────────────────────────────────────────────────┐
+│ PASO 5: SUBIR ARCHIVOS POR FTP (20-30 minutos)              │
+└──────────────────────────────────────────────────────────────┘
+
+OPCIÓN A - FileZilla (Recomendado):
+
+1. Descarga FileZilla: https://filezilla-project.org/
+2. Instala FileZilla
+3. En InfinityFree, ve a "FTP Details"
+4. Abre FileZilla y conecta:
+   
+   Host: ftpupload.net
+   Usuario: epiz_XXXXXXXX
+   Contraseña: tu_password_ftp
+   Puerto: 21
+
+5. Panel izquierdo: navega a "hospitalEPS_hosting"
+6. Panel derecho: navega a "/htdocs/"
+7. Selecciona TODO en el panel izquierdo
+8. Arrastra al panel derecho
+9. Espera a que termine (puede tardar 20-30 minutos)
+
+OPCIÓN B - File Manager Web:
+
+1. En InfinityFree, ve a "Online File Manager"
+2. Navega a "/htdocs/"
+3. Sube archivos en lotes pequeños
+4. Puede ser más lento que FTP
+
+┌──────────────────────────────────────────────────────────────┐
+│ PASO 6: IMPORTAR BASE DE DATOS (5 minutos)                  │
+└──────────────────────────────────────────────────────────────┘
+
+1. En InfinityFree, haz clic en "MySQL Databases"
+2. Haz clic en "phpMyAdmin"
+3. Selecciona tu base de datos (panel izquierdo)
+4. Haz clic en "Importar"
+5. Selecciona: hospitalEPS_hosting\database\eps_database.sql
+6. Haz clic en "Continuar"
+7. Espera a que termine
+
+┌──────────────────────────────────────────────────────────────┐
+│ PASO 7: PROBAR EL SISTEMA (5 minutos)                       │
+└──────────────────────────────────────────────────────────────┘
+
+1. Ve a tu URL: http://tudominio.rf.gd
+2. Deberías ver la página de login
+3. Inicia sesión:
+   
+   Usuario: jarodriguez11
+   Contraseña: Blink182
+
+4. Verifica que todo funciona:
+   ✓ Login exitoso
+   ✓ Dashboard carga
+   ✓ Imágenes se ven
+   ✓ Tablas muestran datos
+   ✓ Puedes crear un paciente
+
+┌──────────────────────────────────────────────────────────────┐
+│ TIEMPO TOTAL ESTIMADO: 50-60 MINUTOS                        │
+└──────────────────────────────────────────────────────────────┘
+
+╔══════════════════════════════════════════════════════════════╗
+║                    SOLUCIÓN DE PROBLEMAS                     ║
+╚══════════════════════════════════════════════════════════════╝
+
+❌ Error: "No se puede conectar a la base de datos"
+   → Verifica config/database.php
+   → Asegúrate de usar el hostname completo
+   → Verifica que la base de datos esté importada
+
+❌ Error 500: Internal Server Error
+   → Revisa que todos los archivos se subieron
+   → Verifica el archivo .htaccess
+   → Revisa los logs de error en el panel de hosting
+
+❌ Las imágenes no cargan
+   → Verifica que assets/images/ se subió
+   → Verifica que hospital.jpg existe
+   → Abre la consola del navegador (F12) para ver errores
+
+❌ La página se ve sin estilos
+   → Verifica que assets/css/ se subió
+   → Limpia la caché del navegador (Ctrl+F5)
+   → Revisa la consola del navegador (F12)
+
+❌ FTP muy lento
+   → Intenta subir en la madrugada
+   → Sube carpetas por separado
+   → Usa File Manager si FTP falla
+
+╔══════════════════════════════════════════════════════════════╗
+║                      DATOS IMPORTANTES                       ║
+╚══════════════════════════════════════════════════════════════╝
+
+📧 Email del proyecto: jarodriguez11@libertadores.edu.co
+
+🔐 Credenciales por defecto:
+   Usuario: jarodriguez11
+   Contraseña: Blink182
+   (¡Cámbialas después del primer login!)
+
+🌐 Hosting recomendado: InfinityFree
+   https://www.infinityfree.net/
+
+📁 Archivos preparados en: hospitalEPS_hosting/
+
+📚 Guía completa en: GUIA_HOSTING_GRATUITO.md
+
+╔══════════════════════════════════════════════════════════════╗
+║                         ¡IMPORTANTE!                         ║
+╚══════════════════════════════════════════════════════════════╝
+
+⚠️  El hosting gratuito es ideal para:
+    ✓ Proyectos de portafolio
+    ✓ Demos y pruebas
+    ✓ Proyectos académicos
+
+⚠️  NO es recomendado para:
+    ✗ Producción real con usuarios reales
+    ✗ Datos sensibles o críticos
+    ✗ Sitios con mucho tráfico
+
+⚠️  Limitaciones:
+    • Velocidad más lenta
+    • Puede tener caídas ocasionales
+    • Límite de visitas diarias
+    • Soporte limitado
+
+💡 Para producción real, considera hosting pago como:
+   • Hostinger (desde $2/mes)
+   • SiteGround
+   • DigitalOcean
+
+╔══════════════════════════════════════════════════════════════╗
+║                      ¡ÉXITO EN TU PROYECTO!                  ║
+╚══════════════════════════════════════════════════════════════╝

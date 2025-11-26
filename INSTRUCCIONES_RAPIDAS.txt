@@ -1,0 +1,109 @@
+========================================
+HOSPITAL EPS - INSTRUCCIONES RÁPIDAS
+========================================
+
+PASO 1: COPIAR ARCHIVOS
+------------------------
+1. Copie toda la carpeta "hospitalEPS" a: C:\wamp64\www\
+2. Ruta final: C:\wamp64\www\hospitalEPS\
+
+PASO 2: CREAR BASE DE DATOS
+----------------------------
+1. Inicie WAMP Server
+2. Abra: http://localhost/phpmyadmin
+3. Cree una nueva base de datos llamada: EPS
+4. Importe el archivo: database/eps_database.sql
+
+PASO 3: AGREGAR IMAGEN
+-----------------------
+1. Descargue una imagen de hospital
+2. Guárdela como: assets/images/hospital.jpg
+3. Tamaño recomendado: 1920x1080px
+
+PASO 4: ACCEDER AL SISTEMA
+---------------------------
+URL: http://localhost/hospitalEPS
+
+CREDENCIALES ADMINISTRADOR:
+Usuario: jarodriguez11
+Contraseña: Blink182
+
+========================================
+CARACTERÍSTICAS DEL SISTEMA
+========================================
+
+✓ Login seguro con detección de inyección SQL
+✓ 3 roles: Administrador, Doctor, Paciente
+✓ Dashboard personalizado por rol
+✓ Gestión completa de pacientes y doctores
+✓ Historias clínicas con relaciones
+✓ Sistema de logs de actividad
+✓ Tablas con paginación (10, 20, 50, 100)
+✓ Filtros y búsqueda en tablas
+✓ Diseño responsive (móviles y tablets)
+✓ Colores llamativos de hospital
+✓ Pie de página con información del autor
+
+========================================
+ESTRUCTURA DE LA BASE DE DATOS
+========================================
+
+Tablas creadas:
+- administradores
+- doctores
+- pacientes
+- historias_clinicas
+- visitas_medicas
+- logs
+
+========================================
+FUNCIONALIDADES POR ROL
+========================================
+
+ADMINISTRADOR:
+- Ver todos los datos del sistema
+- Gestionar pacientes, doctores y administradores
+- Crear/modificar/eliminar historias clínicas
+- Ver logs del sistema
+- Acceso completo
+
+DOCTOR:
+- Ver y editar su perfil
+- Registrar pacientes
+- Crear/modificar/eliminar sus historias clínicas
+- Ver solo sus pacientes
+- No puede ver datos de otros doctores
+
+PACIENTE:
+- Ver su perfil
+- Ver sus historias clínicas
+- Ver sus visitas médicas
+- Modificar: contraseña, dirección, correo, teléfono
+- No puede modificar otros datos
+
+========================================
+SEGURIDAD
+========================================
+
+✓ Detección de inyección SQL
+✓ Contraseñas hasheadas con bcrypt
+✓ Sanitización de inputs
+✓ Logs de todas las acciones
+✓ Control de acceso por roles
+✓ Sesiones seguras
+✓ Protección de archivos sensibles
+
+========================================
+SOPORTE
+========================================
+
+Autor: Jonathan Alexis Rodriguez
+Email: jarodriguez11@libertadores.edu.co
+Proyecto: Especialización en Seguridad de la Información
+Año: 2025
+
+Para más información, consulte:
+- README.md (documentación completa)
+- INSTALACION.md (guía detallada)
+
+========================================

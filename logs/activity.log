@@ -1,0 +1,26 @@
+[2025-11-18 08:30:15] [login] Usuario admin inició sesión desde IP 192.168.1.100
+[2025-11-18 08:45:22] [add_doctor] Doctor Juan Pérez agregado al sistema por usuario admin
+[2025-11-18 09:15:30] [add_user] Usuario maria_lopez creado con rol Enfermera
+[2025-11-18 09:30:45] [login] Usuario maria_lopez inició sesión desde IP 192.168.1.105
+[2025-11-18 10:00:12] [failed_login] Intento fallido de login para usuario test123 desde IP 192.168.1.150
+[2025-11-18 10:15:20] [add_doctor] Doctor Ana García agregada al sistema por usuario admin
+[2025-11-18 11:00:00] [add_admin] Administrador carlos_admin creado por usuario admin
+[2025-11-18 11:30:45] [login] Usuario carlos_admin inició sesión desde IP 192.168.1.102
+[2025-11-18 12:00:10] [update_user] Usuario maria_lopez actualizado - cambio de turno
+[2025-11-18 13:15:30] [delete_doctor] Doctor ID 15 eliminado del sistema por usuario admin
+[2025-11-18 13:45:22] [sql_injection_attempt] Intento de inyección SQL detectado desde IP 185.220.101.50 - Query bloqueada
+[2025-11-18 14:00:00] [failed_login] Múltiples intentos fallidos de login desde IP 45.142.212.61
+[2025-11-18 14:30:15] [add_user] Usuario pedro_garcia creado con rol Médico
+[2025-11-18 15:00:45] [login] Usuario pedro_garcia inició sesión desde IP 192.168.1.110
+[2025-11-18 15:30:20] [add_doctor] Doctor Roberto Martínez agregado al sistema
+[2025-11-18 16:00:10] [delete_user] Usuario temporal_test eliminado por usuario admin
+[2025-11-18 16:30:45] [failed_login] Intento fallido de login para usuario root desde IP 103.253.145.12
+[2025-11-18 17:00:00] [sql_injection_attempt] Intento de inyección SQL detectado - Patrón: UNION SELECT detectado
+[2025-11-18 17:15:30] [login] Usuario admin inició sesión desde IP 192.168.1.100
+[2025-11-18 17:30:22] [add_admin] Administrador supervisor_ti creado por usuario admin
+[2025-11-18 18:19:42] [login] Test desde PowerShell
+[2025-11-18 23:21:02] [login] Test desde PHP
+[2025-11-18 23:21:48] [login] Intento de inyección SQL detectado
+[2025-11-18 23:21:54] [login] Test de log desde debug
+[2025-11-18 23:23:29] [login] intento de conexion exitosa
+[2025-11-20 00:32:43] [test_firewall] Log de prueba generado desde CheckPoint Firewall - Test de conexión

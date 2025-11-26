@@ -1,0 +1,226 @@
+╔══════════════════════════════════════════════════════════════╗
+║           CHECKLIST COMPLETO - SUBIR A HOSTING               ║
+╚══════════════════════════════════════════════════════════════╝
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ ANTES DE EMPEZAR                                           ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[ ] Tengo conexión a internet estable
+[ ] Tengo un email válido para registrarme
+[ ] He leído PASOS_RAPIDOS_HOSTING.txt
+[ ] Tengo 1 hora disponible para completar el proceso
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ FASE 1: PREPARACIÓN LOCAL                                  ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[ ] 1.1 Hacer backup del proyecto completo
+[ ] 1.2 Ejecutar preparar_hosting.bat
+[ ] 1.3 Verificar que se creó la carpeta "hospitalEPS_hosting"
+[ ] 1.4 Verificar que hospital.jpg existe en assets/images/
+[ ] 1.5 Comprimir hospital.jpg si es mayor a 500KB (usar TinyPNG.com)
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ FASE 2: REGISTRO EN HOSTING                                ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[ ] 2.1 Ir a https://www.infinityfree.net/
+[ ] 2.2 Hacer clic en "Sign Up"
+[ ] 2.3 Completar registro con email
+[ ] 2.4 Verificar email (revisar spam si no llega)
+[ ] 2.5 Iniciar sesión en InfinityFree
+[ ] 2.6 Hacer clic en "Create Account"
+[ ] 2.7 Elegir subdominio (ejemplo: hospitaleps.rf.gd)
+        Mi subdominio: _______________________________
+[ ] 2.8 Esperar 2-5 minutos a que se active la cuenta
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ FASE 3: CONFIGURAR BASE DE DATOS                           ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[ ] 3.1 En panel de InfinityFree, ir a "MySQL Databases"
+[ ] 3.2 Hacer clic en "Create Database"
+[ ] 3.3 Anotar los datos (¡IMPORTANTE!):
+
+        Hostname: _______________________________
+        Database Name: _______________________________
+        Username: _______________________________
+        Password: _______________________________
+
+[ ] 3.4 Guardar estos datos en un lugar seguro
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ FASE 4: EDITAR CONFIGURACIÓN                               ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[ ] 4.1 Abrir: hospitalEPS_hosting\config\database.php
+[ ] 4.2 Reemplazar "localhost" con el Hostname del paso 3.3
+[ ] 4.3 Reemplazar "EPS" con el Database Name del paso 3.3
+[ ] 4.4 Reemplazar "root" con el Username del paso 3.3
+[ ] 4.5 Reemplazar "" con el Password del paso 3.3
+[ ] 4.6 Guardar el archivo
+[ ] 4.7 Verificar que los cambios se guardaron correctamente
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ FASE 5: SUBIR ARCHIVOS POR FTP                             ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[ ] 5.1 Descargar FileZilla desde https://filezilla-project.org/
+[ ] 5.2 Instalar FileZilla
+[ ] 5.3 En InfinityFree, ir a "FTP Details"
+[ ] 5.4 Anotar datos FTP:
+
+        FTP Host: _______________________________
+        FTP Username: _______________________________
+        FTP Password: _______________________________
+        FTP Port: 21
+
+[ ] 5.5 Abrir FileZilla
+[ ] 5.6 Conectar con los datos FTP
+[ ] 5.7 Panel izquierdo: navegar a carpeta "hospitalEPS_hosting"
+[ ] 5.8 Panel derecho: navegar a "/htdocs/"
+[ ] 5.9 Seleccionar TODO en panel izquierdo (Ctrl+A)
+[ ] 5.10 Arrastrar al panel derecho
+[ ] 5.11 Esperar a que termine la subida (20-30 minutos)
+[ ] 5.12 Verificar que no hubo errores en la cola de FileZilla
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ FASE 6: IMPORTAR BASE DE DATOS                             ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[ ] 6.1 En InfinityFree, ir a "MySQL Databases"
+[ ] 6.2 Hacer clic en "phpMyAdmin"
+[ ] 6.3 Seleccionar tu base de datos en panel izquierdo
+[ ] 6.4 Hacer clic en pestaña "Importar"
+[ ] 6.5 Hacer clic en "Seleccionar archivo"
+[ ] 6.6 Buscar: hospitalEPS_hosting\database\eps_database.sql
+[ ] 6.7 Hacer clic en "Continuar" (abajo de la página)
+[ ] 6.8 Esperar a que termine (puede tardar 2-5 minutos)
+[ ] 6.9 Verificar mensaje de éxito
+[ ] 6.10 Verificar que las tablas se crearon (panel izquierdo)
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ FASE 7: PRUEBAS INICIALES                                  ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[ ] 7.1 Abrir navegador
+[ ] 7.2 Ir a tu URL: http://________________________.rf.gd
+[ ] 7.3 Verificar que carga la página de login
+[ ] 7.4 Verificar que se ve la imagen del hospital
+[ ] 7.5 Verificar que los estilos CSS cargan correctamente
+[ ] 7.6 Abrir consola del navegador (F12)
+[ ] 7.7 Verificar que no hay errores en consola
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ FASE 8: PRUEBA DE LOGIN                                    ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[ ] 8.1 En la página de login, ingresar:
+        Usuario: jarodriguez11
+        Contraseña: Blink182
+[ ] 8.2 Hacer clic en "Iniciar Sesión"
+[ ] 8.3 Verificar que redirige al dashboard
+[ ] 8.4 Verificar que muestra el nombre del usuario
+[ ] 8.5 Verificar que el menú lateral funciona
+[ ] 8.6 Verificar que las tarjetas de estadísticas muestran números
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ FASE 9: PRUEBAS FUNCIONALES                                ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[ ] 9.1 Ir a "Gestión de Pacientes"
+[ ] 9.2 Verificar que la tabla carga
+[ ] 9.3 Verificar que muestra los pacientes
+[ ] 9.4 Probar búsqueda en la tabla
+[ ] 9.5 Probar paginación
+[ ] 9.6 Hacer clic en "Nuevo Paciente"
+[ ] 9.7 Llenar formulario de prueba
+[ ] 9.8 Guardar paciente
+[ ] 9.9 Verificar que se creó correctamente
+[ ] 9.10 Ir a "Gestión de Doctores"
+[ ] 9.11 Verificar que la tabla carga
+[ ] 9.12 Ir a "Historias Clínicas"
+[ ] 9.13 Verificar que la tabla carga
+[ ] 9.14 Probar crear una historia clínica
+[ ] 9.15 Verificar que se guardó correctamente
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ FASE 10: PRUEBAS RESPONSIVE                                ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[ ] 10.1 Abrir herramientas de desarrollador (F12)
+[ ] 10.2 Activar modo responsive (Ctrl+Shift+M)
+[ ] 10.3 Probar en resolución móvil (375x667)
+[ ] 10.4 Verificar que el menú se adapta
+[ ] 10.5 Verificar que las tablas son scrolleables
+[ ] 10.6 Probar en tablet (768x1024)
+[ ] 10.7 Verificar que todo se ve bien
+[ ] 10.8 Probar en tu teléfono real
+[ ] 10.9 Verificar que funciona correctamente
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ FASE 11: SEGURIDAD Y LIMPIEZA                              ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[ ] 11.1 Cambiar contraseña del administrador
+[ ] 11.2 Verificar que no se pueden acceder a archivos .sql
+        Probar: http://tudominio.rf.gd/database/eps_database.sql
+        Debe dar error 403
+[ ] 11.3 Verificar que no se pueden listar directorios
+        Probar: http://tudominio.rf.gd/api/
+        Debe dar error 403
+[ ] 11.4 Cerrar sesión y volver a iniciar
+[ ] 11.5 Verificar que el logout funciona
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ FASE 12: DOCUMENTACIÓN                                     ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[ ] 12.1 Anotar URL del sitio: _______________________________
+[ ] 12.2 Anotar credenciales de hosting en lugar seguro
+[ ] 12.3 Hacer backup de la base de datos desde phpMyAdmin
+[ ] 12.4 Guardar backup en lugar seguro
+[ ] 12.5 Tomar screenshots del sistema funcionando
+[ ] 12.6 Compartir URL con tu profesor/evaluador
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ OPCIONAL: MEJORAS ADICIONALES                              ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[ ] Configurar dominio personalizado (si tienes uno)
+[ ] Habilitar HTTPS/SSL (si el hosting lo ofrece)
+[ ] Configurar Google Analytics (opcional)
+[ ] Agregar favicon personalizado
+[ ] Optimizar imágenes adicionales
+[ ] Configurar backups automáticos
+
+╔══════════════════════════════════════════════════════════════╗
+║                    INFORMACIÓN DE CONTACTO                   ║
+╚══════════════════════════════════════════════════════════════╝
+
+📧 Email: jarodriguez11@libertadores.edu.co
+🎓 Proyecto: Hospital EPS - Sistema de Gestión Médica
+📅 Año: 2025
+
+╔══════════════════════════════════════════════════════════════╗
+║                         DATOS FINALES                        ║
+╚══════════════════════════════════════════════════════════════╝
+
+URL del sitio: _______________________________
+Usuario admin: jarodriguez11
+Contraseña: (cambiar después del primer login)
+
+Fecha de subida: ___/___/2025
+Tiempo total: _______ minutos
+
+╔══════════════════════════════════════════════════════════════╗
+║                    ¡FELICITACIONES!                          ║
+║         Tu proyecto está en línea y funcionando              ║
+╚══════════════════════════════════════════════════════════════╝
+
+Si completaste todos los pasos, tu sistema Hospital EPS
+debería estar funcionando correctamente en internet.
+
+Comparte la URL con quien necesites y disfruta de tu proyecto!
+

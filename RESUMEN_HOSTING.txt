@@ -1,0 +1,219 @@
+╔══════════════════════════════════════════════════════════════╗
+║              RESUMEN: SUBIR HOSPITAL EPS A HOSTING           ║
+╚══════════════════════════════════════════════════════════════╝
+
+🎯 PROBLEMA: InfinityFree no deja importar el archivo SQL
+
+✅ SOLUCIÓN: Usar 000webhost (más fácil y confiable)
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ OPCIÓN RECOMENDADA: 000WEBHOST                             ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+🌐 URL: https://www.000webhost.com/
+⏱️  Tiempo: 25-30 minutos
+📚 Guía: GUIA_000WEBHOST.txt
+
+POR QUÉ ES MEJOR:
+✅ Importación de SQL más confiable
+✅ Panel más simple
+✅ Activación instantánea
+✅ phpMyAdmin funciona mejor
+✅ File Manager más fácil de usar
+
+PASOS RÁPIDOS:
+1. Registrarse en 000webhost (2 min)
+2. Crear sitio web (3 min)
+3. Crear base de datos (2 min)
+4. Subir archivos (15 min)
+5. Configurar database.php (2 min)
+6. Importar SQL (3 min)
+7. Probar (3 min)
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ ALTERNATIVAS SI 000WEBHOST NO FUNCIONA                     ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+OPCIÓN 2: Awardspace
+🌐 https://www.awardspace.com/
+⭐ Muy confiable, 1GB espacio
+
+OPCIÓN 3: Byet.host
+🌐 https://byet.host/
+⭐ cPanel completo, 5GB espacio
+
+OPCIÓN 4: ProFreeHost
+🌐 https://profreehost.com/
+⭐ Sin límites, muy rápido
+
+📚 Ver: HOSTING_ALTERNATIVAS_MEJORES.md
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ SI NO PUEDES IMPORTAR EL SQL                               ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+MÉTODO 1: Importador Automático
+1. Sube el archivo: database/importar_manual.php
+2. Edita las credenciales dentro del archivo
+3. Accede desde navegador: http://tudominio.com/database/importar_manual.php
+4. Sigue las instrucciones
+5. Elimina el archivo después
+
+MÉTODO 2: Copiar y Pegar
+1. Abre: database/eps_database.sql en Notepad
+2. Copia TODO el contenido (Ctrl+A, Ctrl+C)
+3. En phpMyAdmin, pestaña "SQL"
+4. Pega el contenido (Ctrl+V)
+5. Click en "Continuar"
+
+MÉTODO 3: Dividir el archivo
+(No necesario, tu archivo es pequeño: 4.7KB)
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ ARCHIVOS CREADOS PARA AYUDARTE                             ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+📄 GUIA_000WEBHOST.txt
+   → Guía paso a paso detallada para 000webhost
+   → La más fácil de seguir
+
+📄 HOSTING_ALTERNATIVAS_MEJORES.md
+   → Comparación de diferentes hostings
+   → Pros y contras de cada uno
+
+📄 CHECKLIST_HOSTING.txt
+   → Lista de verificación completa
+   → Con checkboxes para marcar
+
+📄 PASOS_RAPIDOS_HOSTING.txt
+   → Guía visual rápida
+   → Con tiempos estimados
+
+📄 PREPARAR_PARA_HOSTING.txt
+   → Lista de archivos a eliminar/mantener
+   → Qué subir y qué no
+
+📄 ALTERNATIVAS_HOSTING.md
+   → Todas las opciones disponibles
+   → Gratuitas y de pago
+
+📄 preparar_hosting.bat
+   → Script automático
+   → Crea carpeta limpia con archivos necesarios
+
+📄 database/importar_manual.php
+   → Importador automático de SQL
+   → Por si phpMyAdmin no funciona
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ PASOS PARA EMPEZAR AHORA                                   ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+1. [ ] Ejecutar: preparar_hosting.bat
+       → Crea carpeta "hospitalEPS_hosting" con archivos limpios
+
+2. [ ] Leer: GUIA_000WEBHOST.txt
+       → Guía completa paso a paso
+
+3. [ ] Ir a: https://www.000webhost.com/
+       → Registrarse y crear sitio
+
+4. [ ] Seguir los 7 pasos de la guía
+       → Toma 25-30 minutos en total
+
+5. [ ] Probar el sitio
+       → Login: jarodriguez11 / Blink182
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ COMPARACIÓN: InfinityFree vs 000webhost                    ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+                    InfinityFree    000webhost
+Espacio             5GB             300MB
+MySQL               Ilimitado       1GB
+Facilidad           ⭐⭐⭐          ⭐⭐⭐⭐⭐
+Velocidad           ⭐⭐⭐          ⭐⭐⭐⭐
+Importar SQL        ⭐⭐            ⭐⭐⭐⭐⭐
+Activación          5 minutos       Instantánea
+Panel               Complejo        Simple
+phpMyAdmin          Problemas       Funciona bien
+
+VEREDICTO: 000webhost es mejor para este proyecto
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ PREGUNTAS FRECUENTES                                       ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+❓ ¿Por qué InfinityFree no deja importar el SQL?
+   → Tiene restricciones más estrictas
+   → A veces bloquea archivos SQL por seguridad
+   → 000webhost es más permisivo
+
+❓ ¿300MB es suficiente para mi proyecto?
+   → Sí, tu proyecto pesa menos de 10MB
+   → La base de datos es pequeña (4.7KB)
+   → Tienes espacio de sobra
+
+❓ ¿Puedo usar mi propio dominio?
+   → Sí, en la versión paga
+   → En la gratuita usas subdominio .000webhostapp.com
+   → Puedes comprar dominio después
+
+❓ ¿Es seguro para mi proyecto académico?
+   → Sí, es perfecto para proyectos académicos
+   → Miles de estudiantes lo usan
+   → No es para producción real
+
+❓ ¿Cuánto tiempo estará en línea?
+   → Mientras haya actividad (visitas)
+   → Si no hay visitas por 14 días, se suspende
+   → Puedes reactivarlo fácilmente
+
+❓ ¿Puedo migrar después a otro hosting?
+   → Sí, puedes exportar todo
+   → Descargas archivos por FTP
+   → Exportas base de datos desde phpMyAdmin
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ SOPORTE Y AYUDA                                            ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+📧 Email del proyecto: jarodriguez11@libertadores.edu.co
+
+🌐 Foro 000webhost: https://www.000webhost.com/forum
+
+📚 Tutoriales 000webhost: https://www.000webhost.com/tutorials
+
+💬 Si tienes problemas:
+   1. Revisa GUIA_000WEBHOST.txt
+   2. Revisa la sección "Solución de Problemas"
+   3. Busca en el foro de 000webhost
+   4. Contacta al soporte de 000webhost
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ CONSEJO FINAL                                              ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+🎯 Para tu proyecto académico, 000webhost es la mejor opción:
+   ✅ Fácil de usar
+   ✅ Rápido de configurar
+   ✅ Confiable
+   ✅ Gratis
+   ✅ Sin anuncios
+
+⏱️  En 30 minutos puedes tener tu proyecto en línea
+
+📱 Funciona perfecto en móvil y escritorio
+
+🎓 Ideal para presentar a tu profesor
+
+💡 Si después necesitas algo más profesional:
+   → Hostinger: $1.99/mes
+   → Muy económico y mucho mejor
+
+╔══════════════════════════════════════════════════════════════╗
+║                    ¡MUCHA SUERTE!                            ║
+║         Sigue la GUIA_000WEBHOST.txt paso a paso             ║
+║              y en 30 minutos estarás listo                   ║
+╚══════════════════════════════════════════════════════════════╝
+

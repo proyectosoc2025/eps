@@ -1,0 +1,215 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║              AJUSTE FINAL - IMAGEN AL 100% HASTA FOOTER                  ║
+║                      25 de Noviembre de 2025                              ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+🎯 OBJETIVO:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+La imagen del lado izquierdo debe ocupar el 100% de la altura
+y quedar pegada al pie de página en todo momento.
+
+
+✅ SOLUCIÓN APLICADA:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. IMAGEN CON ALTURA COMPLETA:
+   .hospital-image {
+       min-height: 100vh;  ← Mínimo pantalla completa
+       height: 100%;       ← Se estira con el contenido
+   }
+
+2. IMAGEN Y OVERLAY ESTIRADOS:
+   .hospital-image img {
+       min-height: 100vh;  ← Siempre mínimo 100vh
+       height: 100%;       ← Se adapta al contenedor
+   }
+   
+   .overlay {
+       min-height: 100vh;  ← Cubre toda la imagen
+   }
+
+3. COLUMNAS FLEXIBLES:
+   .row.g-0.min-vh-100 {
+       display: flex;      ← Flexbox para estirar
+       flex-wrap: wrap;    ← Permite wrap en móviles
+   }
+   
+   .col-12.col-md-6.p-0 {
+       display: flex;      ← Columna flexible
+       flex-direction: column;
+   }
+
+
+🔧 CAMBIOS TÉCNICOS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ANTES:
+  .hospital-image {
+      height: 100vh;      ← Solo 100vh fijo
+  }
+
+AHORA:
+  .hospital-image {
+      min-height: 100vh;  ← Mínimo 100vh
+      height: 100%;       ← Se estira si hay más contenido
+  }
+
+
+📱 COMPORTAMIENTO POR DISPOSITIVO:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DESKTOP (> 992px):
+  ✓ Imagen: min-height 100vh
+  ✓ Se estira hasta el footer
+  ✓ Siempre pegada al pie de página
+  ✓ Layout lado a lado
+
+TABLETS (768px - 991px):
+  ✓ Imagen: min-height 100vh
+  ✓ Ocupa toda la altura disponible
+  ✓ Pegada al footer
+  ✓ Layout lado a lado
+
+MÓVILES (< 768px):
+  ✓ Imagen: min-height 25-30vh
+  ✓ Arriba de la página
+  ✓ Formulario debajo
+  ✓ Footer al final
+
+LANDSCAPE MÓVIL:
+  ✓ Imagen: min-height 100vh
+  ✓ Layout lado a lado
+  ✓ Imagen pegada al footer
+
+
+🎨 RESULTADO VISUAL:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DESKTOP / TABLETS:
+┌─────────────────────────────────────────────────────────────┐
+│ ┌──────────────────┬──────────────────┐                     │
+│ │                  │                  │                     │
+│ │                  │                  │                     │
+│ │     IMAGEN       │     LOGIN        │                     │
+│ │    (100% alto)   │   FORMULARIO     │                     │
+│ │                  │                  │                     │
+│ │                  │                  │                     │
+│ └──────────────────┴──────────────────┘                     │
+│ ┌─────────────────────────────────────┐                     │
+│ │           FOOTER                    │                     │
+│ └─────────────────────────────────────┘                     │
+└─────────────────────────────────────────────────────────────┘
+  ↑ Imagen pegada al footer ↑
+
+MÓVILES:
+┌─────────────────────────┐
+│ ┌─────────────────────┐ │
+│ │      IMAGEN         │ │
+│ │     (30vh alto)     │ │
+│ └─────────────────────┘ │
+│ ┌─────────────────────┐ │
+│ │                     │ │
+│ │   LOGIN FORMULARIO  │ │
+│ │                     │ │
+│ └─────────────────────┘ │
+│ ┌─────────────────────┐ │
+│ │      FOOTER         │ │
+│ └─────────────────────┘ │
+└─────────────────────────┘
+
+
+✅ VERIFICACIÓN:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. ABRIR LOGIN:
+   http://localhost/hospitalEPS
+
+2. EN DESKTOP/LAPTOP:
+   □ La imagen ocupa toda la altura
+   □ La imagen llega hasta el footer
+   □ No hay espacio blanco entre imagen y footer
+   □ La imagen está pegada al pie de página
+
+3. CAMBIAR TAMAÑO DE VENTANA:
+   □ Hacer ventana más alta
+   □ Hacer ventana más baja
+   □ La imagen siempre se estira hasta el footer
+
+4. EN MÓVILES:
+   □ Imagen arriba (30vh)
+   □ Formulario en medio
+   □ Footer abajo
+   □ Todo visible sin problemas
+
+
+🔍 DETALLES TÉCNICOS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+min-height vs height:
+  • min-height: 100vh → Mínimo 100vh, puede crecer
+  • height: 100% → Se adapta al contenedor padre
+  • Combinados: La imagen siempre llena el espacio
+
+display: flex:
+  • Permite que las columnas se estiren
+  • La imagen ocupa todo el espacio vertical
+  • Se adapta al contenido del lado derecho
+
+object-fit: cover:
+  • La imagen llena todo el contenedor
+  • No se deforma
+  • Se corta si es necesario (normal)
+
+
+💡 VENTAJAS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Imagen siempre pegada al footer
+✓ Ocupa el 100% de la altura disponible
+✓ Se adapta al contenido del lado derecho
+✓ Responsive en todos los dispositivos
+✓ No hay espacios blancos
+✓ Diseño profesional y limpio
+
+
+⚠️ IMPORTANTE:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Si el navegador tiene caché:
+  1. Ctrl + Shift + Delete (limpiar caché)
+  2. Ctrl + F5 (recargar sin caché)
+  3. O abrir en modo incógnito
+
+
+📝 ARCHIVO MODIFICADO:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+• assets/css/login.css
+
+
+🎯 RESUMEN DE CAMBIOS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. .hospital-image → min-height: 100vh + height: 100%
+2. .hospital-image img → min-height: 100vh
+3. .overlay → min-height: 100vh
+4. .row.g-0 → display: flex
+5. .col-12.col-md-6.p-0 → display: flex
+6. Media queries ajustados para mantener altura en todos los tamaños
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+                    ✅ IMAGEN AL 100% HASTA FOOTER
+
+  La imagen del lado izquierdo ahora ocupa el 100% de la altura
+  y está pegada al pie de página en todo momento.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Desarrollador: Jonathan Alexis Rodriguez
+Fecha: 25 de Noviembre de 2025
+Hora: 11:25 AM
+
+═══════════════════════════════════════════════════════════════════════════════

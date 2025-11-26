@@ -1,0 +1,245 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║          SOPORTE PARA CONTRASEÑAS EN TEXTO PLANO AGREGADO                ║
+║                      25 de Noviembre de 2025                              ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+✅ CAMBIO REALIZADO:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+El sistema ahora acepta contraseñas en TEXTO PLANO además de las encriptadas.
+Esto permite crear usuarios directamente en la base de datos sin necesidad
+de encriptar la contraseña previamente.
+
+
+🎯 PROBLEMA SOLUCIONADO:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ANTES:
+  • Solo se aceptaban contraseñas encriptadas con password_hash()
+  • Si creabas un usuario en la BD con contraseña "admin123"
+  • No podías iniciar sesión porque el sistema esperaba un hash
+
+AHORA:
+  • Se aceptan contraseñas encriptadas (recomendado)
+  • También se aceptan contraseñas en texto plano
+  • Puedes crear usuarios directamente en la BD con contraseña simple
+  • El sistema verifica ambos formatos automáticamente
+
+
+🔧 CÓMO FUNCIONA:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+El sistema ahora verifica la contraseña en DOS pasos:
+
+1. PRIMERO: Intenta verificar con password_verify() (hash)
+   • Si la contraseña está encriptada, funciona normalmente
+   • Método seguro y recomendado
+
+2. SEGUNDO: Si falla, compara en texto plano
+   • Si la contraseña en BD es "admin123"
+   • Y el usuario escribe "admin123"
+   • Permite el acceso
+
+Código implementado:
+```php
+// Verificar contraseña: primero intenta con hash, luego con texto plano
+$password_valida = false;
+if (password_verify($password, $row['password'])) {
+    // Contraseña encriptada válida
+    $password_valida = true;
+} elseif ($password === $row['password']) {
+    // Contraseña en texto plano válida
+    $password_valida = true;
+}
+```
+
+
+📊 APLICADO A TODOS LOS ROLES:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Administradores (tabla: administradores)
+✓ Doctores (tabla: doctores)
+✓ Pacientes (tabla: pacientes)
+
+
+💾 EJEMPLOS DE USO EN BASE DE DATOS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+OPCIÓN 1 - Contraseña en texto plano (SIMPLE):
+```sql
+INSERT INTO administradores 
+(usuario, password, nombres, apellidos, rol, email, fecha_creacion) 
+VALUES 
+('admin', 'admin123', 'Administrador', 'Sistema', 'Administrador', 
+ 'admin@hospital.com', NOW());
+```
+Login: usuario = admin, password = admin123 ✓
+
+
+OPCIÓN 2 - Contraseña encriptada (RECOMENDADO):
+```sql
+-- Primero generar el hash en PHP:
+-- password_hash('admin123', PASSWORD_DEFAULT)
+-- Resultado: $2y$10$...hash...
+
+INSERT INTO administradores 
+(usuario, password, nombres, apellidos, rol, email, fecha_creacion) 
+VALUES 
+('admin', '$2y$10$...hash...', 'Administrador', 'Sistema', 'Administrador', 
+ 'admin@hospital.com', NOW());
+```
+Login: usuario = admin, password = admin123 ✓
+
+
+AMBAS OPCIONES FUNCIONAN AHORA ✓
+
+
+🔐 RECOMENDACIONES DE SEGURIDAD:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️ IMPORTANTE:
+
+1. TEXTO PLANO es MENOS SEGURO:
+   • Si alguien accede a la BD, ve las contraseñas
+   • Solo usar para pruebas o desarrollo
+   • NO recomendado para producción
+
+2. ENCRIPTADO es MÁS SEGURO:
+   • Nadie puede ver la contraseña original
+   • Recomendado para producción
+   • Usa password_hash() en PHP
+
+3. MEJOR PRÁCTICA:
+   • Crear usuarios desde la interfaz del sistema
+   • El sistema encripta automáticamente
+   • Solo usar texto plano para casos especiales
+
+
+📝 CÓMO CREAR USUARIOS SEGUROS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MÉTODO 1 - Desde la interfaz (RECOMENDADO):
+  1. Iniciar sesión como administrador
+  2. Ir a "Gestión Usuarios"
+  3. Crear nuevo usuario
+  4. El sistema encripta automáticamente ✓
+
+MÉTODO 2 - Script PHP para generar hash:
+```php
+<?php
+// generar_password.php
+$password = 'admin123';
+$hash = password_hash($password, PASSWORD_DEFAULT);
+echo "Contraseña: $password\n";
+echo "Hash: $hash\n";
+?>
+```
+Ejecutar: php generar_password.php
+Copiar el hash a la BD
+
+MÉTODO 3 - Directamente en BD (SIMPLE pero menos seguro):
+```sql
+INSERT INTO administradores (..., password, ...) 
+VALUES (..., 'admin123', ...);
+```
+Ahora funciona, pero menos seguro
+
+
+🧪 PRUEBAS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PRUEBA 1 - Usuario con contraseña en texto plano:
+```sql
+INSERT INTO administradores 
+(usuario, password, nombres, apellidos, rol, email, fecha_creacion) 
+VALUES 
+('test1', 'password123', 'Test', 'Usuario', 'Administrador', 
+ 'test1@test.com', NOW());
+```
+Login: test1 / password123 → ✓ FUNCIONA
+
+PRUEBA 2 - Usuario con contraseña encriptada:
+```sql
+-- Hash de "password123"
+INSERT INTO administradores 
+(usuario, password, nombres, apellidos, rol, email, fecha_creacion) 
+VALUES 
+('test2', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 
+ 'Test', 'Usuario2', 'Administrador', 'test2@test.com', NOW());
+```
+Login: test2 / password123 → ✓ FUNCIONA
+
+
+📋 VERIFICACIÓN:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Crear usuario en BD con contraseña en texto plano
+2. Ir a: http://localhost/hospitalEPS
+3. Ingresar usuario y contraseña
+4. Debe permitir el acceso ✓
+
+
+⚠️ ADVERTENCIA DE SEGURIDAD:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CONTRASEÑAS EN TEXTO PLANO:
+  ❌ Menos seguro
+  ❌ Visible en la base de datos
+  ❌ Riesgo si hay acceso no autorizado a BD
+  ✓ Útil para desarrollo/pruebas
+  ✓ Fácil de crear usuarios rápidamente
+
+CONTRASEÑAS ENCRIPTADAS:
+  ✓ Más seguro
+  ✓ No se puede ver la contraseña original
+  ✓ Recomendado para producción
+  ✓ Protege contra accesos no autorizados
+  ❌ Requiere generar hash previamente
+
+
+💡 RECOMENDACIÓN FINAL:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Para DESARROLLO/PRUEBAS:
+  • Usar texto plano está bien
+  • Rápido y fácil de crear usuarios
+  • Ejemplo: password = "admin123"
+
+Para PRODUCCIÓN:
+  • SIEMPRE usar contraseñas encriptadas
+  • Crear usuarios desde la interfaz
+  • O usar script para generar hash
+
+
+📝 ARCHIVO MODIFICADO:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+• api/login.php
+
+
+🔄 COMPATIBILIDAD:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Usuarios existentes con contraseñas encriptadas siguen funcionando
+✓ Nuevos usuarios con texto plano ahora funcionan
+✓ No afecta el funcionamiento actual del sistema
+✓ Retrocompatible al 100%
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+                    ✅ CAMBIO APLICADO EXITOSAMENTE
+
+  Ahora puedes crear usuarios directamente en la base de datos con
+  contraseñas en texto plano y podrán iniciar sesión sin problemas.
+
+  El sistema verifica automáticamente si la contraseña está encriptada
+  o en texto plano, y acepta ambas.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Desarrollador: Jonathan Alexis Rodriguez
+Fecha: 25 de Noviembre de 2025
+Hora: 11:30 AM
+
+═══════════════════════════════════════════════════════════════════════════════

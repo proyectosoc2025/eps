@@ -1,0 +1,382 @@
+╔══════════════════════════════════════════════════════════════╗
+║         TUTORIAL VISUAL: 000WEBHOST PASO A PASO              ║
+║              (Como si estuvieras viendo un video)            ║
+╚══════════════════════════════════════════════════════════════╝
+
+⏱️  DURACIÓN: 30 MINUTOS
+🎯 OBJETIVO: Tener tu Hospital EPS en línea
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 🎬 ESCENA 1: PREPARAR ARCHIVOS (5 minutos)                 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[00:00] Abre el Explorador de Windows
+[00:05] Navega a: C:\wamp64\www\hospitalEPS\
+[00:10] Busca el archivo: preparar_hosting.bat
+[00:15] Haz doble clic en preparar_hosting.bat
+[00:20] Se abre una ventana negra (CMD)
+[00:25] Verás mensajes como:
+        "Creando carpeta hospitalEPS_hosting..."
+        "Copiando archivos necesarios..."
+        "Copiando carpeta api..."
+        "Copiando carpeta assets..."
+[01:00] Espera a que termine (1-2 minutos)
+[02:00] Verás: "LIMPIEZA COMPLETADA"
+[02:05] Presiona cualquier tecla para cerrar
+[02:10] Verás una nueva carpeta: hospitalEPS_hosting
+[02:15] Abre la carpeta hospitalEPS_hosting
+[02:20] Verifica que contiene:
+        ✓ api/
+        ✓ assets/
+        ✓ config/
+        ✓ database/
+        ✓ includes/
+        ✓ pages/
+        ✓ logs/
+        ✓ imagenes/
+        ✓ index.php
+        ✓ dashboard.php
+        ✓ .htaccess
+[02:30] ✅ Archivos preparados!
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 🎬 ESCENA 2: REGISTRARSE EN 000WEBHOST (3 minutos)         ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[03:00] Abre tu navegador (Chrome, Firefox, Edge)
+[03:05] En la barra de direcciones escribe:
+        https://www.000webhost.com/
+[03:10] Presiona Enter
+[03:15] Verás la página principal de 000webhost
+[03:20] Busca el botón verde "Free Sign Up"
+[03:25] Haz clic en "Free Sign Up"
+[03:30] Verás un formulario con:
+        - Email
+        - Password
+[03:35] Ingresa tu email (ejemplo: tumail@gmail.com)
+[03:40] Ingresa una contraseña segura
+[03:45] Marca la casilla "I agree to Terms of Service"
+[03:50] Haz clic en "Sign Up"
+[04:00] Verás: "Please verify your email"
+[04:05] Abre tu correo electrónico
+[04:10] Busca el email de 000webhost
+[04:15] Abre el email
+[04:20] Haz clic en el enlace de verificación
+[04:25] Te redirige a 000webhost
+[04:30] Verás: "Email verified successfully"
+[04:35] Haz clic en "Continue to Dashboard"
+[04:40] ✅ Registro completado!
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 🎬 ESCENA 3: CREAR SITIO WEB (3 minutos)                   ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[05:00] Estás en el Dashboard de 000webhost
+[05:05] Verás un botón grande "Create New Website"
+[05:10] Haz clic en "Create New Website"
+[05:15] Verás opciones:
+        - Build Your Own Website
+        - Install WordPress
+        - Install Joomla
+[05:20] Haz clic en "Build Your Own Website"
+[05:25] Verás un campo "Website Name"
+[05:30] Escribe: hospitaleps
+        (o el nombre que prefieras)
+[05:35] Verás abajo: "Your website will be: hospitaleps.000webhostapp.com"
+[05:40] Haz clic en "Next"
+[05:45] Verás un campo "Website Password"
+[05:50] Ingresa una contraseña (diferente a la del login)
+[05:55] Haz clic en "Create"
+[06:00] Verás una animación de carga
+[06:30] Verás: "Website created successfully!"
+[06:35] Haz clic en "Manage Website"
+[06:40] ✅ Sitio web creado!
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 🎬 ESCENA 4: CREAR BASE DE DATOS (3 minutos)               ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[07:00] Estás en el panel de tu sitio web
+[07:05] En el menú lateral, busca "Manage Database"
+[07:10] Haz clic en "Manage Database"
+[07:15] Verás un botón "New Database"
+[07:20] Haz clic en "New Database"
+[07:25] Verás un formulario:
+        - Database name
+        - Database username (automático)
+        - Database password
+[07:30] En "Database name" escribe: hospitaleps_db
+[07:35] El username se genera automático (ejemplo: id12345_hospitaleps)
+[07:40] En "Database password" ingresa una contraseña segura
+[07:45] Haz clic en "Create Database"
+[08:00] Verás: "Database created successfully!"
+[08:05] Verás los datos de tu base de datos:
+        
+        ┌─────────────────────────────────────────┐
+        │ Database Information                    │
+        ├─────────────────────────────────────────┤
+        │ Hostname: localhost                     │
+        │ Database: id12345_hospitaleps_db        │
+        │ Username: id12345_hospitaleps           │
+        │ Password: tu_password                   │
+        └─────────────────────────────────────────┘
+
+[08:10] ⚠️  IMPORTANTE: Copia estos datos a un Notepad
+[08:20] Abre Notepad
+[08:25] Pega los datos
+[08:30] Guarda el archivo como "credenciales_hosting.txt"
+[08:35] ✅ Base de datos creada!
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 🎬 ESCENA 5: SUBIR ARCHIVOS (15 minutos)                   ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[09:00] En el panel de tu sitio, busca "File Manager"
+[09:05] Haz clic en "File Manager"
+[09:10] Se abre una nueva ventana con el administrador de archivos
+[09:15] Verás carpetas:
+        - public_html
+        - logs
+        - tmp
+[09:20] Haz doble clic en "public_html"
+[09:25] Verás un archivo "index.html"
+[09:30] Haz clic derecho en "index.html"
+[09:35] Selecciona "Delete"
+[09:40] Confirma "Yes"
+[09:45] El archivo se elimina
+[09:50] Ahora public_html está vacío
+[09:55] Busca el botón "Upload Files" (arriba)
+[10:00] Haz clic en "Upload Files"
+[10:05] Se abre un diálogo de selección de archivos
+[10:10] Navega a: C:\wamp64\www\hospitalEPS\hospitalEPS_hosting\
+[10:15] Selecciona TODOS los archivos y carpetas (Ctrl+A)
+[10:20] Haz clic en "Abrir"
+[10:25] Verás una barra de progreso
+[10:30] Los archivos empiezan a subir:
+        "Uploading index.php... 10%"
+        "Uploading dashboard.php... 20%"
+        "Uploading api/... 30%"
+        ...
+[15:00] Espera pacientemente (puede tardar 10-15 minutos)
+[20:00] Verás: "Upload complete!"
+[20:05] Verifica que se subieron todas las carpetas:
+        ✓ api/
+        ✓ assets/
+        ✓ config/
+        ✓ database/
+        ✓ includes/
+        ✓ pages/
+        ✓ logs/
+        ✓ imagenes/
+        ✓ index.php
+        ✓ dashboard.php
+        ✓ .htaccess
+[20:30] ✅ Archivos subidos!
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 🎬 ESCENA 6: CONFIGURAR DATABASE.PHP (2 minutos)           ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[21:00] Estás en el File Manager
+[21:05] Navega a la carpeta "config"
+[21:10] Haz doble clic en "config"
+[21:15] Verás el archivo "database.php"
+[21:20] Haz clic derecho en "database.php"
+[21:25] Selecciona "Edit"
+[21:30] Se abre el editor de código
+[21:35] Busca las líneas 14-17:
+        
+        private $host = "localhost";
+        private $db_name = "EPS";
+        private $username = "root";
+        private $password = "";
+
+[21:40] Abre tu archivo "credenciales_hosting.txt"
+[21:45] Copia el Database name
+[21:50] Reemplaza "EPS" con tu database name
+        Ejemplo: "id12345_hospitaleps_db"
+[21:55] Copia el Username
+[22:00] Reemplaza "root" con tu username
+        Ejemplo: "id12345_hospitaleps"
+[22:05] Copia el Password
+[22:10] Reemplaza "" con tu password
+        Ejemplo: "tu_password_aqui"
+[22:15] El resultado debe verse así:
+        
+        private $host = "localhost";
+        private $db_name = "id12345_hospitaleps_db";
+        private $username = "id12345_hospitaleps";
+        private $password = "tu_password_aqui";
+
+[22:20] Haz clic en "Save" (arriba a la derecha)
+[22:25] Verás: "File saved successfully"
+[22:30] Cierra el editor
+[22:35] ✅ Configuración completada!
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 🎬 ESCENA 7: IMPORTAR BASE DE DATOS (3 minutos)            ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[23:00] Vuelve al panel de tu sitio (pestaña anterior)
+[23:05] Ve a "Manage Database"
+[23:10] Busca el botón "phpMyAdmin"
+[23:15] Haz clic en "phpMyAdmin"
+[23:20] Se abre phpMyAdmin en una nueva pestaña
+[23:25] En el panel izquierdo, verás tu base de datos
+        Ejemplo: id12345_hospitaleps_db
+[23:30] Haz clic en tu base de datos
+[23:35] La base de datos está vacía (sin tablas)
+[23:40] Haz clic en la pestaña "Importar" (arriba)
+[23:45] Verás un formulario de importación
+[23:50] Haz clic en "Seleccionar archivo"
+[23:55] Navega a: C:\wamp64\www\hospitalEPS\hospitalEPS_hosting\database\
+[24:00] Selecciona: eps_database.sql
+[24:05] Haz clic en "Abrir"
+[24:10] Verás el nombre del archivo seleccionado
+[24:15] Baja hasta el final de la página
+[24:20] Haz clic en "Continuar"
+[24:25] Verás una barra de progreso
+[24:30] Espera 10-30 segundos
+[24:45] Verás: "Importación finalizada con éxito"
+[24:50] En el panel izquierdo, verás las tablas creadas:
+        ✓ administradores
+        ✓ doctores
+        ✓ pacientes
+        ✓ historias_clinicas
+        ✓ logs
+[25:00] ✅ Base de datos importada!
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 🎬 ESCENA 8: PROBAR EL SISTEMA (5 minutos)                 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[26:00] Abre una nueva pestaña en tu navegador
+[26:05] En la barra de direcciones escribe tu URL:
+        http://hospitaleps.000webhostapp.com
+        (reemplaza "hospitaleps" con tu nombre)
+[26:10] Presiona Enter
+[26:15] ⏳ Espera 2-5 segundos
+[26:20] 🎉 Verás la página de login de Hospital EPS!
+[26:25] Verifica que:
+        ✓ Se ve la imagen del hospital
+        ✓ Los estilos CSS están aplicados
+        ✓ El formulario se ve bien
+        ✓ Los colores son correctos
+[26:35] En el campo "Usuario" escribe: jarodriguez11
+[26:40] En el campo "Contraseña" escribe: Blink182
+[26:45] Haz clic en "Iniciar Sesión"
+[26:50] ⏳ Espera 1-2 segundos
+[26:55] 🎉 Verás el Dashboard!
+[27:00] Verifica que:
+        ✓ Muestra tu nombre: "Jonathan Alexis Rodriguez"
+        ✓ Muestra las tarjetas de estadísticas
+        ✓ El menú lateral funciona
+        ✓ Los números son correctos
+[27:15] Haz clic en "Gestión de Pacientes"
+[27:20] Verás la tabla de pacientes
+[27:25] Verifica que:
+        ✓ La tabla carga
+        ✓ Muestra los pacientes
+        ✓ La búsqueda funciona
+        ✓ La paginación funciona
+[27:40] Haz clic en "Gestión de Doctores"
+[27:45] Verás la tabla de doctores
+[27:50] Verifica que funciona correctamente
+[27:55] Haz clic en "Historias Clínicas"
+[28:00] Verás la tabla de historias clínicas
+[28:05] Verifica que funciona correctamente
+[28:10] Haz clic en tu nombre (arriba a la derecha)
+[28:15] Haz clic en "Cerrar Sesión"
+[28:20] Vuelves a la página de login
+[28:25] ✅ Todo funciona perfectamente!
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 🎬 ESCENA 9: PRUEBA EN MÓVIL (2 minutos)                   ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[29:00] Presiona F12 para abrir DevTools
+[29:05] Haz clic en el ícono de móvil (arriba a la izquierda)
+[29:10] O presiona Ctrl+Shift+M
+[29:15] La página se adapta a vista móvil
+[29:20] Verifica que:
+        ✓ El diseño es responsive
+        ✓ El menú se adapta
+        ✓ Las tablas son scrolleables
+        ✓ Todo se ve bien
+[29:30] Cambia entre diferentes dispositivos:
+        - iPhone SE
+        - iPhone 12 Pro
+        - iPad
+        - Samsung Galaxy S20
+[29:45] Verifica que se ve bien en todos
+[29:50] ✅ Responsive funciona!
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 🎬 ESCENA FINAL: COMPARTIR (1 minuto)                      ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+[30:00] Copia tu URL: http://hospitaleps.000webhostapp.com
+[30:05] Compártela con:
+        - Tu profesor
+        - Tus compañeros
+        - Tu portafolio
+        - LinkedIn
+[30:15] Anota las credenciales para compartir:
+        Usuario: jarodriguez11
+        Contraseña: Blink182
+[30:25] Toma screenshots del sistema funcionando
+[30:35] Guarda todo en un documento
+[30:45] ✅ Proyecto completado y en línea!
+
+╔══════════════════════════════════════════════════════════════╗
+║                    🎉 ¡FELICITACIONES! 🎉                    ║
+║                                                              ║
+║         Tu proyecto Hospital EPS está en línea               ║
+║              y funcionando perfectamente                     ║
+║                                                              ║
+║              Tiempo total: 30 minutos                        ║
+╚══════════════════════════════════════════════════════════════╝
+
+📝 RESUMEN DE LO QUE HICISTE:
+
+✅ Preparaste los archivos con preparar_hosting.bat
+✅ Te registraste en 000webhost
+✅ Creaste un sitio web
+✅ Creaste una base de datos MySQL
+✅ Subiste todos los archivos por File Manager
+✅ Configuraste database.php con las credenciales
+✅ Importaste la base de datos en phpMyAdmin
+✅ Probaste el sistema completo
+✅ Verificaste que funciona en móvil
+✅ Compartiste tu proyecto
+
+🌐 TU PROYECTO:
+URL: http://hospitaleps.000webhostapp.com
+Usuario: jarodriguez11
+Contraseña: Blink182
+
+📧 CONTACTO:
+Email: jarodriguez11@libertadores.edu.co
+Proyecto: Hospital EPS - Sistema de Gestión Médica
+Año: 2025
+
+💡 PRÓXIMOS PASOS:
+
+1. Cambia la contraseña del administrador
+2. Haz backups regulares de la base de datos
+3. Monitorea el uso de recursos
+4. Comparte con tu profesor
+5. Agrega a tu portafolio
+
+🎓 PARA TU PRESENTACIÓN:
+
+- Muestra la URL funcionando
+- Explica las funcionalidades
+- Demuestra el responsive
+- Muestra el código
+- Explica la arquitectura
+
+╔══════════════════════════════════════════════════════════════╗
+║                    ¡ÉXITO EN TU PROYECTO!                    ║
+╚══════════════════════════════════════════════════════════════╝
+

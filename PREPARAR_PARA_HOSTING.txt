@@ -1,0 +1,120 @@
+# LISTA DE VERIFICACIÓN ANTES DE SUBIR A HOSTING
+
+## ARCHIVOS QUE DEBES ELIMINAR O NO SUBIR:
+
+### Archivos de desarrollo y prueba:
+[ ] COPIAR_A_WAMP.bat
+[ ] ejecutar_migracion.bat
+[ ] test.php
+[ ] test_write.php
+[ ] test_imagen_completa.html
+[ ] test_responsive.html
+[ ] debug_login.php
+[ ] debug_logs.php
+[ ] generar_datos_prueba.php
+[ ] limpiar_datos_prueba.php
+[ ] verificar_errores.php
+[ ] corregir_htmlspecialchars.php
+[ ] actualizar_password.php
+[ ] generar_logs.php
+
+### Archivos de documentación (opcional, puedes dejarlos):
+[ ] README.md
+[ ] INSTALACION.md
+[ ] RESPONSIVE_MEJORAS.md
+[ ] ESTRUCTURA_PROYECTO.txt
+[ ] RESUMEN_EJECUTIVO.txt
+[ ] DIAGRAMA_FLUJO.txt
+[ ] README_LOGS.txt
+[ ] INSTRUCCIONES_RAPIDAS.txt
+[ ] CHECKLIST_RAPIDO.txt
+[ ] COMO_PROBAR_RESPONSIVE.txt
+[ ] AJUSTE_IMAGEN_100.txt
+[ ] IMAGEN_COMPLETA_SIEMPRE.txt
+[ ] CAMBIOS_FINALES.txt
+[ ] CORRECCION_URGENTE.txt
+[ ] RESUMEN_CAMBIOS_RESPONSIVE.txt
+[ ] GUIA_HOSTING_GRATUITO.md
+[ ] PREPARAR_PARA_HOSTING.txt
+
+### ARCHIVOS SENSIBLES - ELIMINAR OBLIGATORIAMENTE:
+[ ] CONTRASEÑAS_TEXTO_PLANO.txt
+[ ] CREDENCIALES.txt
+
+## ARCHIVOS QUE DEBES SUBIR:
+
+### Archivos principales:
+[X] index.php
+[X] dashboard.php
+[X] .htaccess
+
+### Carpetas completas:
+[X] api/ (toda la carpeta)
+[X] assets/ (toda la carpeta con css, js, images)
+[X] config/ (toda la carpeta)
+[X] database/ (solo eps_database.sql)
+[X] includes/ (toda la carpeta)
+[X] pages/ (toda la carpeta)
+[X] imagenes/ (si tienes imágenes de perfil)
+[X] logs/ (carpeta vacía, pero necesaria)
+
+## PASOS ANTES DE SUBIR:
+
+1. [ ] Hacer backup de tu proyecto local
+2. [ ] Crear carpeta "hospitalEPS_hosting" con solo archivos necesarios
+3. [ ] Copiar config/database.hosting.php como plantilla
+4. [ ] Verificar que hospital.jpg existe en assets/images/
+5. [ ] Comprimir imágenes grandes (usar TinyPNG.com)
+6. [ ] Eliminar archivos sensibles (CONTRASEÑAS_TEXTO_PLANO.txt, etc.)
+
+## PASOS DESPUÉS DE SUBIR:
+
+1. [ ] Editar config/database.php con datos del hosting
+2. [ ] Importar database/eps_database.sql en phpMyAdmin
+3. [ ] Verificar permisos de carpeta logs/ (debe ser escribible)
+4. [ ] Probar el login
+5. [ ] Verificar que las imágenes cargan
+6. [ ] Probar crear un paciente
+7. [ ] Probar crear una historia clínica
+8. [ ] Verificar responsive en móvil
+
+## DATOS QUE NECESITARÁS DEL HOSTING:
+
+- [ ] Hostname MySQL: _______________________
+- [ ] Database Name: _______________________
+- [ ] Username MySQL: _______________________
+- [ ] Password MySQL: _______________________
+- [ ] FTP Host: _______________________
+- [ ] FTP Username: _______________________
+- [ ] FTP Password: _______________________
+- [ ] URL del sitio: _______________________
+
+## CREDENCIALES DEL SISTEMA:
+
+Usuario Administrador: jarodriguez11
+Contraseña: Blink182
+
+(Recuerda cambiar la contraseña después del primer login)
+
+## HOSTING RECOMENDADOS (GRATUITOS):
+
+1. InfinityFree - https://www.infinityfree.net/
+   - PHP 8.1, MySQL ilimitado, 5GB espacio
+   - Mejor opción
+
+2. 000webhost - https://www.000webhost.com/
+   - PHP 8.0, MySQL 1GB, 300MB espacio
+   - Fácil de usar
+
+3. Awardspace - https://www.awardspace.com/
+   - PHP 8.0, MySQL 1GB, 1GB espacio
+   - Buena alternativa
+
+## NOTAS IMPORTANTES:
+
+- El hosting gratuito puede ser lento
+- Puede tener límites de visitas diarias
+- No es recomendado para producción real
+- Ideal para portafolio o demos
+- Haz backups regulares de la base de datos
+
